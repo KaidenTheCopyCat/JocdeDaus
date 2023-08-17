@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Classificacions</title>
+	</head>
+	<body>
+	    <h1>Classificacions</h1>
+	    <h2>Ranking</h2>
+	    <table>
+	        <tr>
+	            <th>Nom del Jugador</th>
+	            <th>Percentatge d'Èxit</th>
+	        </tr>
+	        <tr th:each="player : ${ranking}">
+	            <td th:text="${player.name}"></td>
+	            <td th:text="${player.successPercentage}"></td>
+	        </tr>
+	    </table>
+	    <h2>Percentatge d'Èxit Mitjà</h2>
+	    <p th:text="${averagePercentage}"></p>
+	</body>
+</html>

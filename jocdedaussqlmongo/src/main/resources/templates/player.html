@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Detalls del Jugador</title>
+	</head>
+	<body>
+	    <h1>Detalls del Jugador</h1>
+	    <p>Nom del Jugador: <span th:text="${player.name}"></span></p>
+	    <h2>Tirades:</h2>
+	    <table>
+	        <tr>
+	            <th>Data</th>
+	            <th>Dau 1</th>
+	            <th>Dau 2</th>
+	            <th>Resultat</th>
+	        </tr>
+	        <tr th:each="game : ${player.games}">
+	            <td th:text="${game.timestamp}"></td>
+	            <td th:text="${game.dice1}"></td>
+	            <td th:text="${game.dice2}"></td>
+	            <td th:text="${game.isWin ? 'Guanyat' : 'Perdut'}"></td>
+	        </tr>
+	    </table>
+	</body>
+</html>

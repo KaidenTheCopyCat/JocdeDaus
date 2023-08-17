@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Jugador Amb Millor Percentatge d'Èxit</title>
+	</head>
+	<body>
+	    <h1>Jugador Amb Millor Percentatge d'Èxit</h1>
+	    
+	    <p>Nom del Jugador: <span th:text="${winner.playerName}"></span></p>
+	    <p>Percentatge d'Èxit: <span th:text="${winner.successRate}"></span></p>
+	    
+	    <a th:href="@{/players}">Tornar a la llista de jugadors</a>
+	</body>
+</html>

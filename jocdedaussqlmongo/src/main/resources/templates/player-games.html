@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Partides del Jugador</title>
+	</head>
+	<body>
+	    <h1>Partides del Jugador</h1>
+	    
+	    <p>Nom del Jugador: <span th:text="${playerName}"></span></p>
+	    
+	    <table>
+	        <tr>
+	            <th>Data</th>
+	            <th>Valor Dau 1</th>
+	            <th>Valor Dau 2</th>
+	            <th>Resultat</th>
+	        </tr>
+	        <tr th:each="game : ${games}">
+				<td th:text="${game.date}"></td>
+				<td th:text="${game.die1}"></td>
+				<td th:text="${game.die2}"></td>
+				<td th:text="${game.result}"></td>
+	        </tr>
+	    </table>
+	    <form th:action="@{/players/{id}/games/roll(id=${player.id})}" method="post">
+	   		<button type="submit">Realitzar Tirada</button>
+		</form>
+		<form th:action="@{/players/{id}/games(id=${player.id})}" method="post">
+			<input type="hidden" name="_method" value="delete"/>
+			<button type="submit">Eliminar Totes les Partides</button>
+		</form>
+	    
+	    <a th:href="@{/players}">Tornar a la llista de jugadors</a>
+	</body>
+</html>

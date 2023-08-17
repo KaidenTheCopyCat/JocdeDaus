@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Jugador Amb Pitjor Percentatge d'Èxit</title>
+	</head>
+	<body>
+	    <h1>Jugador Amb Pitjor Percentatge d'Èxit</h1>
+	    
+	    <p>Nom del Jugador: <span th:text="${loser.playerName}"></span></p>
+	    <p>Percentatge d'Èxit: <span th:text="${loser.successRate}"></span></p>
+	    
+	    <a th:href="@{/players}">Tornar a la llista de jugadors</a>
+	</body>
+</html>
+
+
+

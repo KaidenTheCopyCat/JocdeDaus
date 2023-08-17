@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Rànquing de Jugadors</title>
+	</head>
+	<body>
+	    <h1>Rànquing de Jugadors</h1>
+	    
+	    <table>
+	        <tr>
+	            <th>ID</th>
+	            <th>Nom</th>
+	            <th>Percentatge d'Èxits</th>
+	        </tr>
+	        <tr th:each="player : ${ranking}">
+	            <td th:text="${player.playerId}"></td>
+	            <td th:text="${player.playerName}"></td>
+	            <td th:text="${player.successRate}"></td>
+	        </tr>
+	    </table>
+	    
+	    <a th:href="@{/players}">Tornar a la llista de jugadors</a>
+	</body>
+</html>

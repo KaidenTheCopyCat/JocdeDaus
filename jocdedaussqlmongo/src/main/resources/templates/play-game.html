@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Play Game</title>
+	</head>
+	<body>
+	    <h1>Play Game</h1>
+	    <p>Roll the dice:</p>
+	    <form th:action="@{/players/{id}/games}" th:object="${newGame}" th:method="post">
+	        <button type="submit">Roll</button>
+	    </form>
+	    <p th:if="${gameResult != null}" th:text="${gameResult}"></p>
+	</body>
+</html>
